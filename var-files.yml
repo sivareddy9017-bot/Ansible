@@ -1,0 +1,13 @@
+- name : test variables
+  hosts: local
+  connection: local
+  vars-files:
+  - cource.yml
+  tasks:
+   - name: print variables
+     vars:
+       cource: ansible
+       ansible.builtin.dedug:
+          msg: "Course is: {{ Course }}, Trainer is : {{ Trainer }}"
+
+
