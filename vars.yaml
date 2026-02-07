@@ -1,0 +1,14 @@
+- name : test variables
+  hosts: local
+  connection: local
+  vars:
+   cource: "Devops"
+   Triner: "Siva Reddy"
+   tasks:
+   - name: print variables
+     vars:
+       cource: ansible
+       ansible.builtin.dedug:
+          msg: "Course is: {{ Course }}, Trainer is : {{ Trainer }}"
+
+
