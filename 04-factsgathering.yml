@@ -1,4 +1,4 @@
-- name: facts gather
+- name: facts gather # when Ansible master server is connection to Node server gather the information
   hosts: local
   connection: local
   tasks:
