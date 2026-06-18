@@ -11,10 +11,10 @@
     - PYTHON
     - JENKINS
   tasks:
-   name: print the variables
-  ansible.builtin.debug:
-  msg: |
-   Course: {{ Course }}
-   Trainer: {{ Trainer }}
-   deatils: {{ deatils }}
+   - name: print the variables
+     ansible.builtin.debug:
+       msg: |
+         Course: {{ Course }}
+         Trainer: {{ Trainer }}
+         deatils: {{ deatils }}
   
