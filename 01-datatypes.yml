@@ -1,0 +1,20 @@
+- name: ansible datatypes
+  hosts: local
+  connection: local
+  vars:
+   Course: "AWS WITH DEVSECOPS"
+   Trainer: "siva kumar reddy"
+   duration: 100
+   deatails:
+    - linux
+    - AWS
+    - PYTHON
+    - JENKINS
+  tasks:
+   name: print the variables
+  ansible.buitin.pacakge:
+  msg: |
+   Course: {{ Course }}
+   Trainer: {{ Trainer }}
+   deatils: {{ deatils }}
+  
