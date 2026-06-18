@@ -1,0 +1,7 @@
+- name : Passing args variables
+  hosts: local
+  connection: local
+  tasks: 
+   - name: print variables from args
+     ansible.builtin.package:
+        msg: "hi {{ NAME}},Good morning"
