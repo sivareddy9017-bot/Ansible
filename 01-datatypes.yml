@@ -12,7 +12,7 @@
     - JENKINS
   tasks:
    name: print the variables
-  ansible.buitin.pacakge:
+  ansible.builtin.pacakge:
   msg: |
    Course: {{ Course }}
    Trainer: {{ Trainer }}
