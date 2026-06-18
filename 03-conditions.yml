@@ -1,0 +1,10 @@
+- name: Conditions2
+  hosts: local
+  connection: local
+  vars:
+    NUMBER_OF_SESSIONS: 7
+  tasks:
+  - name: Print the sessions values
+    ansible.builtin.debug:
+      msg: "if more then 5 sessions please print"
+    when: NUMBER_OF_SESSIONS > 5   
