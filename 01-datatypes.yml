@@ -4,12 +4,15 @@
   vars:
    Course: "AWS WITH DEVSECOPS"
    Trainer: "siva kumar reddy"
-   duration: 100
-   details:
-    - linux
-    - AWS
-    - PYTHON
-    - JENKINS
+   duration: 100 # int/number
+   IS_LIVE: true # bool
+   details: #map/dictionary
+     MONTHS: 4
+     TOPICS: # LIST -/[]
+      - linux
+      - AWS
+      - PYTHON
+      - JENKINS
   tasks:
    - name: print the variables
      ansible.builtin.debug:
