@@ -12,7 +12,7 @@
     - JENKINS
   tasks:
    name: print the variables
-  ansible.builtin.package:
+  ansible.builtin.debug:
   msg: |
    Course: {{ Course }}
    Trainer: {{ Trainer }}
