@@ -5,7 +5,7 @@
    Course: "AWS WITH DEVSECOPS"
    Trainer: "siva kumar reddy"
    duration: 100
-   deatails:
+   details:
     - linux
     - AWS
     - PYTHON
@@ -16,5 +16,5 @@
        msg: |
          Course: {{ Course }}
          Trainer: {{ Trainer }}
-         deatils: {{ deatils }}
+         deatils: {{ details }}
   
