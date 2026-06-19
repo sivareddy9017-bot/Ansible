@@ -1,11 +1,11 @@
-- name: error hadling
+- name: error handling
   hosts: local
   connection: local
   tasks:
-   -name: user available or not
-   ansible.builtin.command: id roboshop
-   register: user_output
-   ignore_errors: true
+  - name: user available or not
+    ansible.builtin.command: id roboshop
+    register: user_output
+    ignore_errors: true
 
 -  name: print the values
    ansible.builtin.debug:
