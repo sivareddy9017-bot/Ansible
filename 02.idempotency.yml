@@ -1,0 +1,8 @@
+- name: user creation
+  hosts: local
+  connection: local
+  become: yes
+  tasks:
+  - name : user added
+    ansible.builtin.user:
+     name: mahanandhi
