@@ -1,15 +1,14 @@
-- name: install mysql server
+- name: install nginx server
   hosts: local 
-  connection: local
   become: yes
   tasks:
-  - name: install web mysql server
+  - name: install web nginx server
     ansible.builtin.package:
-     name: mysql
+     name: nginx
      state: present
 
   - name: start mysql
     ansible.builtin.service:
-     name: mysql
+     name: nginx
      state: started
      enabled: yes   
