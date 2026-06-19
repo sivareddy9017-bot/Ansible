@@ -1,9 +1,9 @@
 - name: installing the packages
   hosts: local
-  Connection: local
+  connection: local
   become: yes
   tasks:
-  - name: install pacakes
+  - name: install packages
     ansible.builtin.package:
      name: "{{ item }}"
      state: prasent
