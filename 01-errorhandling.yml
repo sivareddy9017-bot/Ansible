@@ -1,6 +1,7 @@
 - name: error handling
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: user available or not
     ansible.builtin.command: id roboshop
@@ -10,3 +11,7 @@
   - name: print the values
     ansible.builtin.debug:
      msg: "{{ user_output}}"
+
+  - name: create the user
+    ansible.builtin.command: useradd  roboshop
+    when: user_output.rc! = 0
