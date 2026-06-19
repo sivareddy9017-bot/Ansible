@@ -5,7 +5,7 @@
     - name: print loop values
       ansible.builtin.debug:
         msg: "values {{ items }}" # items is a reserved Key word
-    - loop:
+      loop:
        - Maha
        - keshava
        - Naga
