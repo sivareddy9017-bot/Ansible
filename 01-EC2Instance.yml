@@ -1,27 +1,35 @@
- - name: Create ec2 mechines
-   hosts: local
-   connection: local
-   vars: 
+---
+- name: Create EC2 machines
+  hosts: localhost
+  connection: local
+
+  vars:
     sg_id: sg-0d4ec8455aa672dab
     ami_id: ami-0220d79f3f480ecf5
     env: dev
+
     instances:
-    - mongodb
-    - catalogue
-    tasks:
-    - name: 
+      - mongodb
+      - catalogue
+
+  tasks:
+    - name: Create EC2 instances
       amazon.aws.ec2_instance:
-        instance_type: "t3.micro"
-        sg_id: "{{ sg_id }}"
-        ami_id: "{{ ami_id }}"
-        name: "{{ item }} - {{ env }}"
+        name: "{{ item }}-{{ env }}"
+        instance_type: t3.micro
+        image_id: "{{ ami_id }}"
+        security_group: "{{ sg_id }}"
         tags:
-         project: roboshop
-         Component: "{{ item }}"
-         Environment: "{{ env }}"
-        Name: "{{ item }} - {{ env }}"
+          project: roboshop
+          Component: "{{ item }}"
+          Environment: "{{ env }}"
+          Name: "{{ item }}-{{ env }}"
       loop: "{{ instances }}"
-      resgister: ec2_output
+      register: ec2_output
+
+    - name: Show output
+      ansible.builtin.debug:
+        var: ec2_output
 
     - name: print the output
       ansible.builtin.debug:
